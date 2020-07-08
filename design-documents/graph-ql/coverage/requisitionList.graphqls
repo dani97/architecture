@@ -159,13 +159,14 @@ input RequisitionListItemsInput {
     sku: String!
     quantity: Float
     parent_sku: String
-    selected_options: [String!] @doc(description: "selected option ID")
-    entered_options: [EnteredOptionInput!] @doc(description: "entered Options ID")
+    selected_options: [String!] @doc(description: "selected option ID for inputs like select, multi select, radio")
+    entered_options: [EnteredOptionInput!] @doc(description: "entered Options ID for text based inputs")
 }
 
 input UpdateRequisitionListItemsInput {
     item_id: ID! @doc(description: "unique ID of Requisition List Item")
-    customizable_options: [CustomizableOptionInput]
+    selected_options: [String!] @doc(description: "selected option ID for inputs like select, multi select, radio")
+    entered_options: [EnteredOptionInput!] @doc(description: "entered Options ID for text based inputs")
     quantity: Float
 }
 
